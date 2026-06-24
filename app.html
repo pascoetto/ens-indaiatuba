@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ENS</title>
+
+<meta name="theme-color" content="#275898">
+
+<style>
+body{
+    margin:0;
+    background:#275898;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    font-family:Segoe UI,sans-serif;
+}
+
+img{
+    width:180px;
+}
+
+.loading{
+    margin-top:30px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.dots::after{
+    content:"";
+    animation:dots 1.5s infinite;
+}
+
+@keyframes dots{
+    0%{content:"";}
+    33%{content:".";}
+    66%{content:"..";}
+    100%{content:"...";}
+}
+</style>
+</head>
+<body>
+
+<img src="logo.png">
+
+<div class="loading">
+    Carregando<span class="dots"></span>
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+window.location.replace(
+"https://script.google.com/macros/s/AKfycbzkLLdAr8MgzFkn0-rIeN8eS8RnzuVDoEfxSEC1SjcVwh5jKOYDNjigvNVi3fVS9CAChg/exec"
+);
+
+},2000);
+
+</script>
+
+</body>
+</html>
