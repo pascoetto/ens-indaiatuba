@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ENS - Indaiatuba - Sul I</title>
+
+<meta name="theme-color" content="#275898">
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(180deg,#275898,#1d4370);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    background:#fff;
+    width:100%;
+    max-width:420px;
+    border-radius:24px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.logo{
+    width:140px;
+    margin:auto;
+    margin-bottom:25px;
+}
+
+.logo img{
+    width:100%;
+}
+
+h1{
+    color:#275898;
+    font-size:26px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:16px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.primary{
+    background:#275898;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+}
+
+.install{
+    margin-top:10px;
+    background:#4CAF50;
+    color:white;
+    display:none;
+}
+
+.footer{
+    margin-top:25px;
+    color:#888;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">
+        <img src="logo.png" alt="ENS">
+    </div>
+
+    <h1>ENS</h1>
+
+    <div class="subtitle">
+        Indaiatuba - Sul I
+    </div>
+
+    <button class="btn primary" onclick="abrirSistema()">
+        Entrar no Sistema
+    </button>
+
+    <button id="installBtn" class="btn install">
+        Instalar Aplicativo
+    </button>
+
+    <div class="footer">
+        Setor Indaiatuba
+    </div>
+
+</div>
+
+<script>
+
+const URL_APP =
+"https://script.google.com/macros/s/AKfycbzkLLdAr8MgzFkn0-rIeN8eS8RnzuVDoEfxSEC1SjcVwh5jKOYDNjigvNVi3fVS9CAChg/exec";
+
+function abrirSistema(){
+    window.location.href = URL_APP;
+}
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt',(e)=>{
+    e.preventDefault();
+    deferredPrompt = e;
+
+    document.getElementById('installBtn').style.display='block';
+});
+
+document.getElementById('installBtn').addEventListener('click', async ()=>{
+
+    if(!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    await deferredPrompt.userChoice;
+
+    deferredPrompt = null;
+});
+
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./service-worker.js');
+}
+
+</script>
+
+</body>
+</html>
