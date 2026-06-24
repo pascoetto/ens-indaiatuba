@@ -1,12 +1,11 @@
 {
   "name": "ENS - Indaiatuba - Sul I",
   "short_name": "ENS",
-  "description": "Sistema ENS - Setor Indaiatuba",
-  "start_url": "./",
+  "start_url": "app.html",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#275898",
   "theme_color": "#275898",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
