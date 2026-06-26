@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ENS - Indaiatuba - Sul I</title>
+
+    <meta name="theme-color" content="#275898">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ENS">
+
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <img
+                src="img/logo.png"
+                class="logo"
+                alt="ENS">
+
+            <h1>ENS</h1>
+
+            <h2>Indaiatuba - Sul I</h2>
+
+            <p class="description">
+
+                Instale o aplicativo para acessar o sistema
+                de forma rápida diretamente pela tela inicial.
+
+            </p>
+
+            <!-- Android -->
+
+            <button
+                id="installButton"
+                class="btn primary">
+
+                Instalar Aplicativo
+
+            </button>
+
+            <!-- iPhone -->
+
+            <div
+                id="iosInstructions"
+                class="ios hidden">
+
+<h3>📱 Instalação no iPhone</h3>
+
+<p>
+
+1. Toque em Compartilhar
+
+</p>
+
+<img src="img/iphone-share.png">
+
+<p>
+
+2. Escolha Adicionar à Tela Inicial
+
+</p>
+
+<img src="img/iphone-home.png">
+
+<p>
+
+3. Toque em Adicionar.
+
+</p>
+
+            </div>
+
+            <div
+                id="loading"
+                class="loading hidden">
+
+                Preparando instalação...
+
+            </div>
+
+            <footer>
+
+                <strong>Setor Indaiatuba</strong>
+
+                <br>
+
+                Versão 1.0.0
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="js/install.js"></script>
+	<script src="js/common.js"></script>
+<div id="toast" class="toast"></div>
+</body>
+<footer>
+
+<strong>Setor Indaiatuba</strong>
+
+<br>
+
+<span id="statusInternet"></span>
+
+<br>
+
+Versão 1.0.0
+
+</footer>
+</html>
